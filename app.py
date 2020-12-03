@@ -1,8 +1,6 @@
-import numpy as np
 import os
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
+# from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
@@ -13,7 +11,8 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///universities.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///universities.sqlite"
+# os.environ.get('DATABASE_URL', '') or
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
