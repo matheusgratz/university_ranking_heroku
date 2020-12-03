@@ -1,2 +1,0 @@
-# university_ranking_heroku
-university_ranking_heroku
