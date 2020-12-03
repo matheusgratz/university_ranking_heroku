@@ -8,19 +8,6 @@ from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 
 #################################################
-# Database Setup
-#################################################
-engine = create_engine("sqlite:///universities.sqlite")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-University_Ranking = Base.classes.universities_ranking
-
-#################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
@@ -30,6 +17,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "s
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#################################################
+# Database Setup
+#################################################
+engine = create_engine("sqlite:///universities.sqlite")
+
+# reflect an existing database into a new model
+Base = automap_base()
+
+# reflect the tables
+Base.prepare(engine, reflect=True)
+
+# Save reference to the table
+University_Ranking = Base.classes.universities_ranking
 
 #################################################
 # Flask Routes
