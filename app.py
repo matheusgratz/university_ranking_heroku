@@ -13,7 +13,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///univ.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///universities.sqlite"
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -116,7 +116,6 @@ def ranking(rfrom, rto):
         all_universities.append(rank_range_dict)
 
     return jsonify(all_universities)
-
 
 
 if __name__ == '__main__':
