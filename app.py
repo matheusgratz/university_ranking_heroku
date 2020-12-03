@@ -25,6 +25,12 @@ University_Ranking = Base.classes.universities_ranking
 #################################################
 app = Flask(__name__)
 
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///universities.sqlite"
+
+# Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 #################################################
 # Flask Routes
 #################################################
