@@ -23,14 +23,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #################################################
 engine = create_engine("sqlite:///universities.sqlite")
 
-# reflect an existing database into a new model
+# # reflect an existing database into a new model
 Base = automap_base()
 
-# reflect the tables
+# # reflect the tables
 Base.prepare(engine, reflect=True)
 
-# Save reference to the table
+# # Save reference to the table
 University_Ranking = Base.classes.universities_ranking
+
+db = SQLAlchemy(app)
+
+
 
 #################################################
 # Flask Routes
@@ -53,7 +57,7 @@ def welcome():
 @app.route("/api/v1.0/ranking/<rfrom>/<rto>")
 def ranking(rfrom, rto):
     # Create our session (link) from Python to the DB
-    session = Session(engine)
+    # session = Session(engine)
 
     """Return a list of universities based on ranking range"""
     # Query ranking range
@@ -62,7 +66,7 @@ def ranking(rfrom, rto):
     rto = float(rto)
 
 
-    results = session.query(
+    results = db.session.query(
         University_Ranking.ranking,
         University_Ranking.title,
         University_Ranking.location,
@@ -83,7 +87,7 @@ def ranking(rfrom, rto):
     ).filter(University_Ranking.ranking <= rto
     ).all()
 
-    session.close()
+    db.session.close()
 
     # Create a dictionary from the row data and append to a list of all_passengers
     all_universities = []
