@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Universities Ranking</title>
+     <meta charset="utf-8">
+     <meta name="viewport", content="width=device-width, initial.scale=1, shrink-to-fit=no">
+     <meta http-equiv = "x-ua-compatible" content="ie-edge">
+     <title>CSS Stylesheets with Relative Paths</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ </head> 
+ 
+ <!--start the body-->
+ <body>
+    <!--Define a fluid container that adjust to any screen size-->
+    <div class="container.fluid">
+        <!--Add another container to "center" content-->
+        <div class = "container-fluid">
+        
+        <style>
+        .jumbotron
+            {
+            background-color:#217F99;
+            }
+        </style>
+        <!-- Add a title page and a square-->
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <img src="assets\images\jumbo_image.jpg" class="img-fluid" alt="Responsive image">
+                    <h1 class="display-4 text-center text-white">World University Rankings 2021</h1>
+                        <p class="lead text-center text-white">Welcome to the knowledge rankings site.</p>
+                </div>
+            </div>
+           
+            
+        <!-- End the title page and a square-->
+
+        <!--section of navigation bar-->
+        <div class="p-3 mb-2 bg-info text-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="data.html">Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="map.html">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>                     
+                    </ul>
+                </div>
+            </nav>
+            </div>
+        <!--End of section of navigation bar-->
+
+        <!--Beggining of contents-->
+        <!-- Start intro paragraph here start home page -->
+        <br>
+            <article>
+                <h1 class="text-info text-center">Where do data come from?</h1>
+            </article>
+        <!-- End intro paragraph -->
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="assets\images\car1.png" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Universities Rankings Data</h5>
+        <p>The rankings data was obtained by web scraping the <a href=https://www.timeshighereducation.com/world-university-rankings/2020/world-ranking#!/page/0/length/25/sort_by/rank/sort_order/asc/cols/stats> The world university rankings</a>
+        site. The result was a set of 1526 observations that where placed in a Pandas dataframe. </p>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets\images\car2.png" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-danger" >Universities Locations</h5>
+        <p class="text-danger">In order to obtain the location (lat, long) of the Universities a Google Geocoding request was done. The result was 
+        a set 1524 universities that where also placed in a Pandas dataframe.  </p>
+        </div>
+     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets\images\car3.png" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+      <h5>A different plugin</h5>
+        <p>To build the data table the <a href = http://tabulator.info> Tabulator </a> plug in was used to render the table from a javascript file. The advantage is 
+        that this plug in allows control on pagination, downloading the table, sorting columns, amog other things. </p>
+        </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        
+            <br>
+            <br>
+
+        <!-- define a style for a footer -->
+        <style>
+            .footer {
+                position: float;
+                bottom: 0;
+                width: 100%;
+                background-color: #217F99;
+                color: LightGray;
+                text-align: center;
+            }
+        </style>
+        <!-- end definition of footer style -->
+        <!-- add a divition with class footer -->
+        <div class="footer">
+            <p>Page Designed with information from <b>THE World University Rankings 2021</b>.</p>
+        </div>
+        <!-- End of footer -->
+
+        
+        
+        
+        
+    <!--End  of the fluid containers, do not errase-->
+        </div>
+    </div>
+<!--End of the body do not errase-->
+    <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
+ </body>
+ 
+</html>

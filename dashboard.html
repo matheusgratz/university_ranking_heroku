@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Universities Ranking Data</title>
+     <meta charset="utf-8">
+     <meta name="viewport", content="width=device-width, initial.scale=1, shrink-to-fit=no">
+     <meta http-equiv = "x-ua-compatible" content="ie-edge">
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+ </head> 
+ 
+ <!--start the body-->
+ <body>
+    <!--Define a fluid container that adjust to any screen size-->
+    <div class="container.fluid">
+        <!--Add another container to "center" content-->
+        <div class = "container-fluid">
+
+<style>
+        .jumbotron
+            {
+            background-color:#217F99;
+            }
+        </style>
+        <!-- Add a title page and a square-->
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <img src="assets\images\jumbo_image.jpg" class="img-fluid" alt="Responsive image">
+                    <h1 class="display-4 text-center text-white">World University Rankings 2021</h1>
+                        <p class="lead text-center text-white">Welcome to the knowledge rankings site.</p>
+                </div>
+            </div>
+           
+            
+        <!-- End the title page and a square-->
+
+        <!--section of navigation bar-->
+        <div class="p-3 mb-2 bg-info text-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="data.html">Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="map.html">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            </div>
+        <!--End of section of navigation bar-->
+
+        <!--Begining of the page-->
+        <!--Info-->
+        <h1 class="text-info">Interactive Dashboard</h1>
+
+        <p>In this dashboard you can consult the top 10 Universities by Continent. Also, it is posible to study the scores of each University
+        in order to see their strengths and weaknesses. Finally, it is also posible to compare every University through three indicators. </p>
+
+        <!--visualilzarion section-->
+        <br>
+        <hr>
+        <!--Two visualizations-->
+        <div class="container">
+            <div class="row">
+            <!--Country Visualization-->
+                <div class="col-6">
+                    <h3 class="text-info"> The top 10 Universities by Continent </h3>
+                    <div class="well">
+                        <h5 class="text-secondary">Select a Country:</h5>
+                        <select id="SelectCountry" onchange="optionChanged(this.value)"></select>
+                    </div>
+                    <!--Graph-->
+                    <div id="CountryG"></div>
+                </div>
+            <!--End Country Visualization-->
+            <!--University Visualization-->
+                <div class="col-6">
+                    <h3 class="text-info"> University Indicators </h3>
+                    <!--Selection  menu-->
+                    <div class="well">
+                        <h5 class="text-secondary">Select a University:</h5>
+                        <select id="University" onchange="optionChangedUniversity(this.value)"></select>
+                    </div>
+                    <!--Graph-->
+                    <div id="pie"></div>
+                </div>
+            <!--End University Visualization-->
+            </div>
+        <!--End of two visualzations-->
+
+        <br>
+        <br>
+        <!--One visalization-->
+        <div class="row">
+                
+                <div class="col-12">
+                <h3 class="text-info">Contrast and comparision of three indicators <i>VS</i> ranking</h3>
+                    <div id="scatter"></div>
+                </div>
+        </div>
+         
+        <br>
+        <br>
+
+        <!-- define a style for a footer -->
+        <style>
+            .footer {
+                position: float;
+                bottom: 0;
+                width: 100%;
+                background-color: #217F99;
+                color: LightGray;
+                text-align: center;
+            }
+        </style>
+        <!-- end definition of footer style -->
+        <!-- add a divition with class footer -->
+        <div class="footer">
+            <p>Page Designed with information from <b>THE World University Rankings 2021</b>.</p>
+        </div>
+        <!-- End of footer -->
+
+        
+        
+        
+        
+    <!--End  of the fluid containers, do not errase-->
+        </div>
+    </div>
+<!--End of the body do not errase-->
+    
+    
+   <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../assets/js/app_d.js"></script>
+    <script type="text/javascript" src="assets/js/app_bc.js"></script>
+
+    
+ </body>
+ 
+</html>
