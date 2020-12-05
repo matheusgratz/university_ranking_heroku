@@ -82,35 +82,72 @@ function init() {
 function barChart(continent){
   console.log("here goes the chart")
   //order by ranking
-  continent.sort((a, b) => {
-    return a.ranking - b.ranking;
+ continent.sort((a, b) => {
+  return a.ranking - b.ranking;
   });
   
   //Take the first 10
   var result = continent.slice(0, 10);
   console.log(result);
-  //console.log(continent);
+  console.log(continent);
+  
   var universities = result.map(row => row.title);
   var score = result.map(row=>row.overall_score);
-  var ranking = result.map(row=> row.ranking)
+  var ranking = result.map(row=> row.ranking);
+  var numberStudents = result.map(row=>row.number_students);
+  var international = result.map(row=>row.perc_intl_students);
+  var genderRatio = result.map(row => row.gender_ratio);
+  var staffRatio = result.map(row => row.students_staff_ratio);
+  //console.log(numberStudents);
+  //console.log(international);
+
+  var texto = [];
+
+  for(var i=0; i<11; i++){
+    var aux1 = ranking[i];
+    var aux2 = numberStudents[i];
+    var aux3 = international[i];
+    var aux4 = genderRatio[i];
+    var aux5 = staffRatio[i]
+    var aux6 = ['<i>Ranking:</i> '] + aux1 +['<br><i>Number of Students: </i>'] + aux2 +['<br><i>International Students: </i>'] + aux3 + ['<br><i>Gender Ratio: </i>'] + aux4 +['<br><i>Student-Staff Ratio: </i>'] + aux5;
+    texto.push(aux6);
+  };
+
+  console.log(texto);
+  
+var data = [{
+  type: 'bar',
+  x: universities,
+  y: score,
+  hovertemplate: '<i><b>Overall Score</i>: %{y:.2f}' +
+  //'<br><b>X</b>: %{x}<br>' +
+  '<br><b>%{text}</b>',
+  text: texto
+}]
+
+var layout = {
+  height: 400,
+    width: 600,
+	title: 'Top 10 Universities per Continent'
+};
   
   //Trace1 for the Greek Data
-   var data = {
-     x: score,
-     y: universities,
-     text: ranking,
-     name: "Continent",
-     type: "bar",
-     orientation:('h')
-   };
+  //  var data = {
+  //    x: score,
+  //    y: universities,
+  //    text: ranking,
+  //    name: "Continent",
+  //    type: "bar",
+  //    orientation:('h')
+  //  };
 
   // Apply the group barmode to the layout
-   var layout = {
-    height: 400,
-    width: 600,
-     title: "Research Score of each University",
-     barmode: "group"
-   };
+  //  var layout = {
+  //   height: 400,
+  //   width: 600,
+  //    title: "Research Score of each University",
+  //    barmode: "group"
+  //  };
 
  // Render the plot to the div tag with id "plot"
  Plotly.newPlot("CountryG", data, layout);
@@ -143,7 +180,7 @@ function pieChart(universities){
   var layout = {
     height: 400,
     width: 600,
-    title: "2021 University scores in %",
+    title: "2021 University standardized scores in %",
   };
 
   Plotly.newPlot("pie", data, layout);

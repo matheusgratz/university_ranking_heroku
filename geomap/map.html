@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-​
+
 <head>
   <meta charset="utf-8">
   <title>Basic Map</title>
-​
+
   <!-- BootStrap D3 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   
@@ -14,13 +14,14 @@
     crossorigin="" />
   
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="d3Style.css">
-​
+  <!-- Our CSS -->
+  <link rel=“stylesheet” type=“text/css” href=“style.css”>
+  <link rel=“stylesheet” href=“d3Style.css”>
+
 </head>
-​
+
 <body>
-​
+
   <div class = "container-fluid">
         
         <style>
@@ -40,7 +41,7 @@
            
             
         <!-- End the title page and a square-->
-​
+
         <!--section of navigation bar-->
         <div class="p-3 mb-2 bg-info text-white">
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
@@ -68,10 +69,6 @@
                 </div>
             </nav>
             </div>
-​
-  </div>
-​
-  
         <!--End of section of navigation bar-->
         <!--Begining of the page-->
         <!--Info-->
@@ -79,12 +76,18 @@
         <br>
         <h1 class="text-info">Interactive Map</h1>
         <hr>
-​
-​
+
   <!-- The div where we will inject our map -->
-  <div id="map"></div>
-​
-​
+        <p> To enter to the map press the next button </p>
+
+        <!--<div class="text-center">
+        <a href="geomap\index.html" class="btn btn-info btn-lg active" role="button" aria-pressed="true" target="_blank">Visit the Map!</a>
+        </div>
+        <hr>
+        <br>-->
+
+        <div id="map"></div>
+
   <!-- define a style for a footer -->
         <style>
             .footer {
@@ -102,22 +105,15 @@
             <p>Page Designed with information from <b>THE World University Rankings 2021</b>.</p>
         </div>
         <!-- End of footer -->
-​
-​
-​
-​
-​
-​
-​
-​
-​
+
+
   <!-- D3 -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-​
+
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -127,7 +123,7 @@
   <script type="text/javascript" src="config.js"></script>
   <!-- JS -->
   <script type="text/javascript" src="logic.js"></script>
-​
+
 </body>
-​
+
 </html>
